@@ -13,7 +13,10 @@ set_global_assignment -name VHDL_FILE validadorBCD.vhd
 set_global_assignment -name VHDL_FILE signoMagnitud.vhd
 set_global_assignment -name VHDL_FILE binarioBCD.vhd
 set_global_assignment -name VHDL_FILE decodificador7seg.vhd
-set_global_assignment -name VHDL_FILE controlDecimal.vhd
+set_global_assignment -name VHDL_FILE comparador.vhd
+set_global_assignment -name VHDL_FILE prioridadBotones.vhd
+set_global_assignment -name VHDL_FILE controlLED.vhd
+set_global_assignment -name VHDL_FILE controlVisualizacion.vhd
 set_global_assignment -name VHDL_FILE principal.vhd
 set_global_assignment -name SDC_FILE principal.sdc
 
@@ -88,3 +91,8 @@ set_location_assignment PIN_C19 -to HEX3_D[4]
 set_location_assignment PIN_D19 -to HEX3_D[5]
 set_location_assignment PIN_G15 -to HEX3_D[6]
 set_location_assignment PIN_G16 -to HEX3_DP
+
+# Pulsadores activos en bajo: BUTTON2 > BUTTON1 > BUTTON0.
+set_location_assignment PIN_H2 -to BUTTON[0]
+set_location_assignment PIN_G3 -to BUTTON[1]
+set_location_assignment PIN_F1 -to BUTTON[2]

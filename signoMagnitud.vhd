@@ -18,7 +18,7 @@ ARCHITECTURE structural OF signoMagnitud IS
     SIGNAL Opuesto  : STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 BEGIN
 
-    -- Solo una resta (01) puede tener signo negativo.
+
     Negativo <= NOT Operacion(1) AND Operacion(0) AND Resultado(N-1);
     Signo <= Negativo;
 

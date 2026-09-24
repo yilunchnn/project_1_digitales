@@ -16,7 +16,6 @@ END ENTITY selectorResultado;
 ARCHITECTURE gatelevel OF selectorResultado IS
 BEGIN
 
-    -- 00 suma, 01 resta, 10 producto, 11 cero.
     bits: FOR i IN 0 TO N-1 GENERATE
         S(i) <= (Suma(i) AND NOT Sel(1) AND NOT Sel(0)) OR
                 (Resta(i) AND NOT Sel(1) AND Sel(0)) OR

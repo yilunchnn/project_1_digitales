@@ -4,7 +4,7 @@ USE IEEE.std_logic_1164.ALL;
 ENTITY binarioBCD IS
     GENERIC(
         N       : POSITIVE := 8;
-        DIGITOS : POSITIVE := 3   -- Deben caber todos los valores de N bits.
+        DIGITOS : POSITIVE := 3
     );
     PORT(
         Binario : IN  STD_LOGIC_VECTOR(N-1 DOWNTO 0);

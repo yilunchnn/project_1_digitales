@@ -23,7 +23,6 @@ ARCHITECTURE structural OF sumadorRestador IS
 
 BEGIN
 
-    -- Modo = 0 suma, Modo = 1 resta.
     C(0) <= Modo;
 
     sumadores: FOR i IN 0 TO N-1 GENERATE

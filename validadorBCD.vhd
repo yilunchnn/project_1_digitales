@@ -3,7 +3,7 @@ USE IEEE.std_logic_1164.ALL;
 
 ENTITY validadorBCD IS
     GENERIC(
-        N : POSITIVE := 4   -- N debe ser mayor o igual a 4.
+        N : POSITIVE := 4
     );
     PORT(
         A, B        : IN  STD_LOGIC_VECTOR(N-1 DOWNTO 0);
@@ -20,7 +20,6 @@ ARCHITECTURE gatelevel OF validadorBCD IS
     SIGNAL EA, EB : STD_LOGIC;
 BEGIN
 
-    -- Habilitar = 0 se usara despues para el modo hexadecimal.
     EA <= Habilitar WHEN A > Nueve ELSE '0';
     EB <= Habilitar WHEN B > Nueve ELSE '0';
 

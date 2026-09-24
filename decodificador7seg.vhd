@@ -3,7 +3,7 @@ USE IEEE.std_logic_1164.ALL;
 
 ENTITY decodificador7seg IS
     GENERIC(
-        N : POSITIVE := 4   -- N debe ser mayor o igual a 4.
+        N : POSITIVE := 4
     );
     PORT(
         Dato      : IN  STD_LOGIC_VECTOR(N-1 DOWNTO 0);
@@ -19,8 +19,6 @@ ARCHITECTURE combinacional OF decodificador7seg IS
     SIGNAL Digito : STD_LOGIC_VECTOR(6 DOWNTO 0);
 BEGIN
 
-    -- Orden: g f e d c b a. Un cero enciende el segmento.
-    -- Digitos hexadecimales 0..F. Menos y blanco tienen entradas propias.
     WITH Dato(3 DOWNTO 0) SELECT
         Patron <= "1000000" WHEN "0000", -- 0
                   "1111001" WHEN "0001", -- 1
@@ -44,7 +42,6 @@ BEGIN
         Digito <= Patron;
     END GENERATE;
 
-    -- Si N es mayor que 4, los bits adicionales deben estar en cero.
     mas_bits: IF N > 4 GENERATE
         Digito <= Patron WHEN Dato(N-1 DOWNTO 4) = (N-1 DOWNTO 4 => '0')
                      ELSE "1111111";

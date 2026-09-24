@@ -27,7 +27,6 @@ BEGIN
 
         bits: FOR j IN 0 TO 2*N-1 GENERATE
 
-            -- La fila i equivale a A AND B(i), desplazada i posiciones.
             datos: IF j >= i AND j < i+N GENERATE
                 parcial(i)(j) <= A(j-i) AND B(i);
             END GENERATE;

@@ -2,7 +2,7 @@ LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 
 ENTITY controlLED IS
-    GENERIC(N : POSITIVE := 8); -- N >= 3.
+    GENERIC(N : POSITIVE := 8);
     PORT(
         Resultado : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
         Modo : IN STD_LOGIC_VECTOR(1 DOWNTO 0);

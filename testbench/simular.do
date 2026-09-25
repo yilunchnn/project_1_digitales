@@ -1,5 +1,3 @@
-# Ejecutar desde la carpeta que contiene principal.qpf:
-# do testbench/simular.do
 onerror {abort}
 set proyecto [pwd]
 transcript file [file join $proyecto testbench resultado_simulacion.log]

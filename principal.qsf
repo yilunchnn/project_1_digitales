@@ -24,7 +24,6 @@ set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to *
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to LEDG[*]
 
-# SW7..SW4 = A, SW3..SW0 = B, SW9..SW8 = operacion
 set_location_assignment PIN_J6 -to SW[0]
 set_location_assignment PIN_H5 -to SW[1]
 set_location_assignment PIN_H6 -to SW[2]
@@ -36,7 +35,6 @@ set_location_assignment PIN_E3 -to SW[7]
 set_location_assignment PIN_E4 -to SW[8]
 set_location_assignment PIN_D2 -to SW[9]
 
-# LEDG7..LEDG0 = resultado binario
 set_location_assignment PIN_J1 -to LEDG[0]
 set_location_assignment PIN_J2 -to LEDG[1]
 set_location_assignment PIN_J3 -to LEDG[2]
@@ -50,7 +48,6 @@ set_location_assignment PIN_B1 -to LEDG[9]
 
 set_global_assignment -name LAST_QUARTUS_VERSION 13.1
 
-# Displays de la DE0: segmentos activos en bajo.
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to HEX0_D[*]
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to HEX0_DP
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to HEX1_D[*]
@@ -92,7 +89,6 @@ set_location_assignment PIN_D19 -to HEX3_D[5]
 set_location_assignment PIN_G15 -to HEX3_D[6]
 set_location_assignment PIN_G16 -to HEX3_DP
 
-# Pulsadores activos en bajo: BUTTON2 > BUTTON1 > BUTTON0.
 set_location_assignment PIN_H2 -to BUTTON[0]
 set_location_assignment PIN_G3 -to BUTTON[1]
 set_location_assignment PIN_F1 -to BUTTON[2]

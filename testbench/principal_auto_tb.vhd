@@ -1,8 +1,6 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 
--- Solo simulacion. La aritmetica de este archivo es el modelo de referencia.
--- No agregar este archivo a los que sintetiza Quartus.
 ENTITY principal_auto_tb IS
 END ENTITY principal_auto_tb;
 
@@ -14,7 +12,6 @@ ARCHITECTURE test OF principal_auto_tb IS
     SIGNAL casos_probados, errores : NATURAL := 0;
     SIGNAL finalizado : BOOLEAN := false;
 
-    -- Convierte un entero positivo a bits, sin numeric_std.
     FUNCTION bits(valor : NATURAL; ancho : POSITIVE) RETURN STD_LOGIC_VECTOR IS
         VARIABLE numero : NATURAL := valor;
         VARIABLE salida : STD_LOGIC_VECTOR(ancho-1 DOWNTO 0);
@@ -27,8 +24,6 @@ ARCHITECTURE test OF principal_auto_tb IS
         RETURN salida;
     END FUNCTION;
 
-    -- Referencia de segmentos activos en bajo, orden gfedcba.
-    -- 16 representa el signo menos; 0..15 representan 0..F.
     FUNCTION segmentos(digito : NATURAL) RETURN STD_LOGIC_VECTOR IS
     BEGIN
         CASE digito IS
@@ -98,7 +93,6 @@ BEGIN
     BEGIN
         FOR botones IN 0 TO 7 LOOP
             boton := bits(botones, 3);
-            -- Decide la prioridad sin usar el codificador del circuito.
             IF boton(2) = '0' THEN modo := 3;
             ELSIF boton(1) = '0' THEN modo := 2;
             ELSIF boton(0) = '0' THEN modo := 1;
@@ -114,7 +108,7 @@ BEGIN
                             WHEN 0 => resultado := a + b;
                             WHEN 1 => resultado := a - b;
                             WHEN 2 => resultado := a * b;
-                            WHEN OTHERS => resultado := 0; -- Reservado, sin division.
+                            WHEN OTHERS => resultado := 0;
                         END CASE;
                         binario := (resultado + 256) MOD 256;
                         magnitud := ABS resultado;

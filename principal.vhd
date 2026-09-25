@@ -184,7 +184,6 @@ BEGIN
         Segmentos => HEX0_D
     );
 
-    -- La prueba enciende tambien los puntos decimales.
     HEX0_DP <= NOT Prueba;
     HEX1_DP <= NOT Prueba;
     HEX2_DP <= NOT Prueba;

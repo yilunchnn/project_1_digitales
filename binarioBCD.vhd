@@ -28,7 +28,6 @@ BEGIN
         BEGIN
 
             Dato <= etapa(i)(4*j+3 DOWNTO 4*j);
-            -- Antes de desplazar, suma 3 a cada cifra mayor que 4.
             Ajuste <= "0011" WHEN Dato > "0100" ELSE "0000";
 
             U1: ENTITY WORK.sumadorRestador
@@ -46,7 +45,6 @@ BEGIN
 
         END GENERATE;
 
-        -- Desplaza e introduce el siguiente bit, empezando por el mayor.
         etapa(i+1) <= ajustada(i)(4*DIGITOS-2 DOWNTO 0) & Binario(N-1-i);
 
     END GENERATE;

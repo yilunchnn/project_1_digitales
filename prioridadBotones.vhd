@@ -12,7 +12,6 @@ END ENTITY prioridadBotones;
 ARCHITECTURE gatelevel OF prioridadBotones IS
     SIGNAL Codigo : STD_LOGIC_VECTOR(1 DOWNTO 0);
 BEGIN
-
     Codigo(1) <= NOT BUTTON(2) OR NOT BUTTON(1);
     Codigo(0) <= NOT BUTTON(2) OR (BUTTON(1) AND NOT BUTTON(0));
     Modo <= Codigo;
